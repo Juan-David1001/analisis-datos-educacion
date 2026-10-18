@@ -10,8 +10,9 @@ mas datos como la zona del colegio, el genero, el estrato y si tiene internet
 en la casa.
 
 Elegimos este dataset porque la educacion es nuestro tema asignado y las
-pruebas Saber 11 son la medicion mas conocida del pais. Ademas los datos
-estan completos y se pueden descargar gratis, que era lo que necesitabamos.
+pruebas Saber 11 son la medicion mas conocida del pais. Ademas se pueden
+descargar gratis y traen las variables que necesitabamos (zona, internet,
+estrato y puntajes).
 
 ## El problema
 
@@ -24,6 +25,6 @@ estudiar, y eso se tiene que notar en el puntaje.
 
 ## Las 3 preguntas
 
-1. Hay diferencia en el puntaje de matematicas entre los estudiantes de zona rural y zona urbana?
+1. Hay diferencia en el puntaje global entre los estudiantes de zona rural y zona urbana?
 2. Tener internet en la casa tiene relacion con la zona donde estudia el estudiante?
 3. Cuales son los indicadores mas importantes para medir el rendimiento en esta muestra?

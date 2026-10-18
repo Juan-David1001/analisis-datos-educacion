@@ -1,7 +1,7 @@
 Dashboard del proyecto (fase 5).
 
 El archivo .pbix de Power BI va en esta carpeta. Fuente de datos:
-../data/datos_limpios.csv (2501 filas, Saber 11 periodo 20224).
+../data/datos_limpios.csv (3000 filas sin vacios, Saber 11 periodo 20224).
 
 Hojas acordadas:
 1. Portada con los 5 KPIs en tarjetas

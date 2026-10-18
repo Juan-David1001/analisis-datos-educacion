@@ -4,7 +4,7 @@
 
 - Muestra las carpetas del repo y que hay en cada una
 - Abre el notebook 01 y corre la limpieza
-- Dice cuantos datos quedaron y que se quito
+- Dice cuantos datos habia, cuantos tenian vacios y como se trataron
 
 ## Parte 2 - Hipotesis y hallazgos (5 min)
 
