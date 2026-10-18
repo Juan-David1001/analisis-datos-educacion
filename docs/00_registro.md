@@ -13,8 +13,8 @@ Promedios de la tabla limpia: matematicas 50.4, lectura 52.7, global 250.3.
 
 ## Notebook 02 - hipotesis
 
-Hipotesis 1 (prueba t, rural vs urbana en matematicas):
-rural 45.6, urbana 52.0, t = -10.956, p = 0.0. Se rechaza H0.
+Hipotesis 1 (prueba t, rural vs urbana en puntaje global):
+rural 226.5, urbana 257.7, t = -12.731, p = 0.0. Se rechaza H0.
 
 Hipotesis 2 (chi cuadrado, zona vs internet):
 rural 344 sin internet y 253 con internet; urbana 476 sin internet y 1428
@@ -25,5 +25,5 @@ con internet. Chi = 217.994, p = 0.0. Se rechaza H0.
 1. Puntaje global promedio: 250.3
 2. Promedio matematicas: 50.4
 3. Promedio lectura critica: 52.7
-4. Brecha rural-urbana: 6.4 puntos
+4. Brecha rural-urbana: 31.3 puntos
 5. Hogares con internet: 67.2 %

@@ -9,9 +9,24 @@ def cargar_datos(ruta):
 
 
 def quitar_nulos(tabla):
-    antes = len(tabla)
-    tabla_limpia = tabla.dropna()
-    print("Se quitaron", antes - len(tabla_limpia), "filas con vacios")
+    
+    tabla_limpia = tabla.copy()
+
+    columnas_categoricas = ["estrato", "educacion_madre", "educacion_padre", "internet"]
+
+    # Registrar los nulos antes del tratamiento
+    nulos_antes = tabla_limpia[columnas_categoricas].isna().sum()
+
+    # Reemplazar los valores faltantes
+    for columna in columnas_categoricas:
+        tabla_limpia[columna] = tabla_limpia[columna].fillna("No informado")
+
+    print("Valores nulos antes del tratamiento:")
+    print(nulos_antes)
+
+    print("\nValores nulos después del tratamiento:")
+    print(tabla_limpia.isna().sum())
+
     return tabla_limpia
 
 

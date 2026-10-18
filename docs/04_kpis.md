@@ -23,8 +23,8 @@ es general o es especifico de matematicas.
 
 ## KPI 4: brecha rural-urbana
 
-Dio 6.4 puntos a favor de lo urbano. Este es el indicador mas importante del
-proyecto porque responde directo a la hipotesis 1. Mientras siga en 6 puntos,
+Dio 31.3 puntos a favor de lo urbano. Este es el indicador mas importante del
+proyecto porque responde directo a la hipotesis 1. Mientras siga en 31 puntos,
 la brecha existe. La meta seria bajarlo ano a ano.
 
 ## KPI 5: hogares con internet
