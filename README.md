@@ -26,7 +26,33 @@ con el rendimiento, y proponer decisiones con evidencia.
 
 ## Resultados
 
-Los resultados se interpretan en docs/02_hipotesis.md y docs/04_kpis.md.
+Nivel de significancia 0.05. Ademas del valor p se reporta el tamanio del
+efecto. Detalle en `docs/02_hipotesis.md` y `docs/04_kpis.md`.
+
+| Hipotesis | Prueba | Valor p | Tamanio del efecto |
+|---|---|---|---|
+| H1: el puntaje global cambia con la zona | t de Welch | < 0.001 | d = 0.55 (mediano) |
+| H2: el internet se relaciona con la zona | Chi cuadrado | < 0.001 | V = 0.29 (moderado) |
+| H3: el puntaje global cambia con el internet | t de Welch | < 0.001 | d = 0.70 (mediano) |
+| H4: el puntaje global cambia con el estrato | Kruskal-Wallis | < 0.001 | epsilon cuadrado = 0.06 |
+
+| KPI | Muestra (IC 95%) | Nacional 20224 |
+|---|---|---|
+| Puntaje global promedio | 246.9 (244.9 a 248.8) | 250.1 |
+| Promedio matematicas | 49.7 (49.2 a 50.1) | 50.6 |
+| Promedio lectura critica | 52.2 (51.8 a 52.6) | 52.8 |
+| Brecha rural-urbana | 28.7 puntos (24.6 a 32.8) | 26.2 |
+| % de estudiantes con internet en el hogar | 67.3% (65.5% a 69.1%) | 72.6% |
+
+Hallazgos principales:
+
+- La brecha rural-urbana no se explica solo por el estrato: dentro del mismo
+  estrato se mantiene y crece (15.8 puntos en estrato 1, 48.1 en estrato 3).
+- Tener internet es el factor con el efecto mas grande (36 puntos), pero no
+  cierra la brecha por si solo: entre estudiantes con internet sigue en 28.6
+  puntos.
+- La brecha es parecida en matematicas y en lectura, asi que es un problema
+  general del aprendizaje rural y no de una sola materia.
 
 ## Conclusiones
 
