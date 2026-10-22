@@ -1,0 +1,367 @@
+table datos
+	lineageTag: 1565314f-ffd3-6567-d074-90602510a41f
+
+	/// Numero de estudiantes en el contexto de filtro.
+	measure Conteo_Estudiantes = COUNTROWS(datos)
+		formatString: #,0
+		displayFolder: KPIs
+		lineageTag: 26e5f66e-3ef4-c5a6-cd67-4cbed0e5677b
+
+	/// KPI 1. Puntaje global promedio (0 a 500).
+	measure KPI_Global = AVERAGE(datos[global])
+		formatString: 0.0
+		displayFolder: KPIs
+		lineageTag: c4ee4345-e200-490c-dbc7-90af312b2596
+
+	/// KPI 2. Promedio de matematicas (0 a 100).
+	measure KPI_Matematicas = AVERAGE(datos[matematicas])
+		formatString: 0.0
+		displayFolder: KPIs
+		lineageTag: 34871065-e565-239d-40d8-5df9f25eebcd
+
+	/// KPI 3. Promedio de lectura critica (0 a 100).
+	measure KPI_Lectura = AVERAGE(datos[lectura])
+		formatString: 0.0
+		displayFolder: KPIs
+		lineageTag: bb849345-4c91-1289-6925-835a44dec9cb
+
+	/// Puntaje global promedio urbano.
+	measure Prom_Urbano = CALCULATE(AVERAGE(datos[global]), datos[zona] = "URBANO")
+		formatString: 0.0
+		displayFolder: KPIs
+		lineageTag: 46ef2a82-c86c-b717-46b1-6db00d8af9fb
+
+	/// Puntaje global promedio rural.
+	measure Prom_Rural = CALCULATE(AVERAGE(datos[global]), datos[zona] = "RURAL")
+		formatString: 0.0
+		displayFolder: KPIs
+		lineageTag: 65246329-eb00-1067-1b3c-48464294607c
+
+	/// KPI 4. Brecha urbano menos rural en puntaje global.
+	measure KPI_Brecha_Rural_Urbana = [Prom_Urbano] - [Prom_Rural]
+		formatString: 0.0
+		displayFolder: KPIs
+		lineageTag: b72f04fa-a94b-d0bc-d6d2-f64017834f77
+
+	/// KPI 5. % de estudiantes con internet en el hogar, sobre quienes respondieron Si o No.
+	measure KPI_Internet_Si_pct =
+			DIVIDE(
+			    CALCULATE(COUNTROWS(datos), datos[internet] = "Si"),
+			    CALCULATE(COUNTROWS(datos), datos[internet] IN {"Si", "No"})
+			)
+		formatString: 0.0%
+		displayFolder: KPIs
+		lineageTag: b2b4b6c8-4fda-9985-3591-cfe213956248
+
+	/// Estudiantes urbanos.
+	measure n_Urbano = CALCULATE(COUNTROWS(datos), datos[zona] = "URBANO")
+		formatString: #,0
+		displayFolder: KPIs
+		lineageTag: a07c197d-7605-846d-982b-2194acf89c27
+
+	/// Estudiantes rurales.
+	measure n_Rural = CALCULATE(COUNTROWS(datos), datos[zona] = "RURAL")
+		formatString: #,0
+		displayFolder: KPIs
+		lineageTag: 941f0576-21ba-2739-fcb1-c5dabe58932a
+
+	/// Promedio nacional 20224 (1 065 888 estudiantes).
+	measure Nac_Global = 250.1
+		formatString: 0.0
+		displayFolder: Referencia nacional
+		lineageTag: 3618c405-563f-9250-95cd-f59e21e128c8
+
+	/// Promedio nacional de matematicas 20224.
+	measure Nac_Matematicas = 50.6
+		formatString: 0.0
+		displayFolder: Referencia nacional
+		lineageTag: a4eb9d0c-8083-7940-4427-3c6b5905a0a7
+
+	/// Promedio nacional de lectura critica 20224.
+	measure Nac_Lectura = 52.8
+		formatString: 0.0
+		displayFolder: Referencia nacional
+		lineageTag: 30d382e4-360c-7d7c-9414-023a99da2d51
+
+	/// Brecha nacional urbano menos rural 20224.
+	measure Nac_Brecha = 254.6 - 228.4
+		formatString: 0.0
+		displayFolder: Referencia nacional
+		lineageTag: 6538f0fa-c0c4-c06e-3bdd-a4ac88b0261d
+
+	/// % nacional con internet entre quienes respondieron.
+	measure Nac_Internet = 727882 / (727882 + 274680)
+		formatString: 0.0%
+		displayFolder: Referencia nacional
+		lineageTag: cea49382-6c13-54fb-37be-8ee28b77012e
+
+	/// Intervalo de confianza del KPI 1 y referencia nacional.
+	measure Sub_Global =
+			VAR n = COUNTROWS(datos)
+			VAR m = AVERAGE(datos[global])
+			VAR e = IF(n > 1, T.INV.2T(0.05, n - 1) * STDEV.S(datos[global]) / SQRT(n))
+			RETURN
+			    "IC 95 %: " & FORMAT(m - e, "0.0") & " – " & FORMAT(m + e, "0.0")
+			        & "   ·   Nacional: " & FORMAT([Nac_Global], "0.0")
+		displayFolder: Intervalos
+		lineageTag: e7fe9dc6-6e23-2a79-2074-28e59c1a5965
+
+	/// Intervalo de confianza del KPI 2 y referencia nacional.
+	measure Sub_Matematicas =
+			VAR n = COUNTROWS(datos)
+			VAR m = AVERAGE(datos[matematicas])
+			VAR e = IF(n > 1, T.INV.2T(0.05, n - 1) * STDEV.S(datos[matematicas]) / SQRT(n))
+			RETURN
+			    "IC 95 %: " & FORMAT(m - e, "0.0") & " – " & FORMAT(m + e, "0.0")
+			        & "   ·   Nacional: " & FORMAT([Nac_Matematicas], "0.0")
+		displayFolder: Intervalos
+		lineageTag: 15cbfb77-a899-2612-5948-3eff887b20d4
+
+	/// Intervalo de confianza del KPI 3 y referencia nacional.
+	measure Sub_Lectura =
+			VAR n = COUNTROWS(datos)
+			VAR m = AVERAGE(datos[lectura])
+			VAR e = IF(n > 1, T.INV.2T(0.05, n - 1) * STDEV.S(datos[lectura]) / SQRT(n))
+			RETURN
+			    "IC 95 %: " & FORMAT(m - e, "0.0") & " – " & FORMAT(m + e, "0.0")
+			        & "   ·   Nacional: " & FORMAT([Nac_Lectura], "0.0")
+		displayFolder: Intervalos
+		lineageTag: b201a19f-c84b-ffcb-400f-7adf113b3c35
+
+	/// Intervalo de confianza de Welch para la brecha y referencia nacional.
+	measure Sub_Brecha =
+			VAR nu = [n_Urbano]
+			VAR nr = [n_Rural]
+			VAR su = CALCULATE(STDEV.S(datos[global]), datos[zona] = "URBANO")
+			VAR sr = CALCULATE(STDEV.S(datos[global]), datos[zona] = "RURAL")
+			VAR b = [KPI_Brecha_Rural_Urbana]
+			VAR e = 1.96 * SQRT(su ^ 2 / nu + sr ^ 2 / nr)
+			RETURN
+			    IF(
+			        nu > 1 && nr > 1,
+			        "IC 95 %: " & FORMAT(b - e, "0.0") & " – " & FORMAT(b + e, "0.0")
+			            & "   ·   Nacional: " & FORMAT([Nac_Brecha], "0.0"),
+			        "Se necesitan estudiantes de ambas zonas"
+			    )
+		displayFolder: Intervalos
+		lineageTag: a70626e2-46ad-bb21-9a95-d96fe45bcfb9
+
+	/// Intervalo de confianza del KPI 5 y referencia nacional.
+	measure Sub_Internet =
+			VAR n = CALCULATE(COUNTROWS(datos), datos[internet] IN {"Si", "No"})
+			VAR p = [KPI_Internet_Si_pct]
+			VAR e = IF(n > 0, 1.96 * SQRT(p * (1 - p) / n))
+			RETURN
+			    "IC 95 %: " & FORMAT(p - e, "0.0%") & " – " & FORMAT(p + e, "0.0%")
+			        & "   ·   Nacional: " & FORMAT([Nac_Internet], "0.0%")
+		displayFolder: Intervalos
+		lineageTag: 7784231d-6cf0-a0f2-750a-28ac3fc639d3
+
+	/// Brecha urbano menos rural en matematicas, en desviaciones estandar.
+	measure Brecha_DE_Matematicas =
+			DIVIDE(
+			    CALCULATE(AVERAGE(datos[matematicas]), datos[zona] = "URBANO")
+			        - CALCULATE(AVERAGE(datos[matematicas]), datos[zona] = "RURAL"),
+			    STDEV.S(datos[matematicas])
+			)
+		formatString: 0.00
+		displayFolder: Hallazgos
+		lineageTag: 59756a9e-afce-620b-0c8c-5a1090c8baec
+
+	/// Brecha urbano menos rural en lectura critica, en desviaciones estandar.
+	measure Brecha_DE_Lectura =
+			DIVIDE(
+			    CALCULATE(AVERAGE(datos[lectura]), datos[zona] = "URBANO")
+			        - CALCULATE(AVERAGE(datos[lectura]), datos[zona] = "RURAL"),
+			    STDEV.S(datos[lectura])
+			)
+		formatString: 0.00
+		displayFolder: Hallazgos
+		lineageTag: 3cb85b6c-1643-cc1f-0f48-444711eb250e
+
+	/// Brecha urbano menos rural en puntaje global, en desviaciones estandar.
+	measure Brecha_DE_Global = DIVIDE([KPI_Brecha_Rural_Urbana], STDEV.S(datos[global]))
+		formatString: 0.00
+		displayFolder: Hallazgos
+		lineageTag: 75ecfccc-e501-06bb-9f0b-b5d90a4c0456
+
+	/// % de estudiantes de cada zona que cae en cada rango de puntaje.
+	measure Pct_en_Zona = DIVIDE([Conteo_Estudiantes], CALCULATE([Conteo_Estudiantes], REMOVEFILTERS(datos[rango_global])))
+		formatString: 0.0%
+		displayFolder: Hallazgos
+		lineageTag: dbedf889-a92a-8bb6-941e-1a0876af8c67
+
+	/// Estudiantes, solo si son al menos 30.
+	measure n_30 = VAR n = COUNTROWS(datos) RETURN IF(n >= 30, n)
+		formatString: #,0
+		displayFolder: Territorio
+		lineageTag: 8c193c50-043a-7b54-69f8-3fc424da3ae4
+
+	/// Puntaje global, solo con al menos 30 estudiantes.
+	measure KPI_Global_n30 = IF(COUNTROWS(datos) >= 30, AVERAGE(datos[global]))
+		formatString: 0.0
+		displayFolder: Territorio
+		lineageTag: e327f721-e65a-652b-3f83-a93b4ac926a7
+
+	/// Matematicas, solo con al menos 30 estudiantes.
+	measure KPI_Mat_n30 = IF(COUNTROWS(datos) >= 30, AVERAGE(datos[matematicas]))
+		formatString: 0.0
+		displayFolder: Territorio
+		lineageTag: ce0cc303-7489-8518-47c4-d441b959a355
+
+	/// Lectura, solo con al menos 30 estudiantes.
+	measure KPI_Lect_n30 = IF(COUNTROWS(datos) >= 30, AVERAGE(datos[lectura]))
+		formatString: 0.0
+		displayFolder: Territorio
+		lineageTag: 8494bfde-0b49-0fab-314a-8350819eb595
+
+	/// Critico < 230; bajo el nacional < 250,1; sobre el nacional >= 250,1.
+	measure Semaforo_Departamento =
+			VAR p = AVERAGE(datos[global])
+			RETURN
+			    SWITCH(TRUE(), p < 230, "Crítico", p < [Nac_Global], "Bajo el promedio nacional", "Sobre el promedio nacional")
+		displayFolder: Territorio
+		lineageTag: e5ee570e-7613-41e7-42b0-ecfce708c785
+
+	/// Color del semaforo departamental.
+	measure Color_Semaforo_Depto =
+			SWITCH(
+			    [Semaforo_Departamento],
+			    "Crítico", "#B91C1C",
+			    "Bajo el promedio nacional", "#D97706",
+			    "#0F766E"
+			)
+		displayFolder: Territorio
+		lineageTag: add85fea-5239-be8a-1e74-8cb43dd789bd
+
+	/// Meta propuesta por el equipo: brecha menor a 20 puntos (d cerca de 0,38).
+	measure Meta_Brecha = 20
+		formatString: 0.0
+		displayFolder: KPIs
+		lineageTag: ee457e42-0427-dd23-75df-1a948a2c4405
+
+	/// Rojo si la brecha supera la meta de 20 puntos.
+	measure Color_Brecha = IF([KPI_Brecha_Rural_Urbana] > [Meta_Brecha], "#B91C1C", "#0F766E")
+		displayFolder: KPIs
+		lineageTag: 08f21cd2-d517-fd2b-c075-9d0dcfa9ef9d
+
+	column genero
+		dataType: string
+		lineageTag: eb358667-370e-5439-8ea4-1b9e80924ba8
+		summarizeBy: none
+		sourceColumn: genero
+
+		annotation SummarizationSetBy = User
+
+	column zona
+		dataType: string
+		lineageTag: 71d75a1c-47c0-f33b-6959-ee9bbf62a7fb
+		summarizeBy: none
+		sourceColumn: zona
+
+		annotation SummarizationSetBy = User
+
+	column depto
+		dataType: string
+		lineageTag: 789bd7f3-8dd9-311e-b0a9-eaa30a540e22
+		summarizeBy: none
+		sourceColumn: depto
+
+		annotation SummarizationSetBy = User
+
+	column municipio
+		dataType: string
+		lineageTag: b58716fd-13e7-3c1c-a4b9-a5db5ced6b0c
+		summarizeBy: none
+		sourceColumn: municipio
+
+		annotation SummarizationSetBy = User
+
+	column estrato
+		dataType: string
+		lineageTag: b4d38644-f3a2-051f-9d3a-1e18ac519de5
+		summarizeBy: none
+		sourceColumn: estrato
+
+		annotation SummarizationSetBy = User
+
+	column educacion_madre
+		dataType: string
+		lineageTag: bac560fe-ae39-1d9c-b505-74aa6c7a41fa
+		summarizeBy: none
+		sourceColumn: educacion_madre
+
+		annotation SummarizationSetBy = User
+
+	column educacion_padre
+		dataType: string
+		lineageTag: 9096406e-20cc-b101-679e-190b7420a8d0
+		summarizeBy: none
+		sourceColumn: educacion_padre
+
+		annotation SummarizationSetBy = User
+
+	column internet
+		dataType: string
+		lineageTag: 51eea068-7b24-ded2-7184-6ca15de88514
+		summarizeBy: none
+		sourceColumn: internet
+
+		annotation SummarizationSetBy = User
+
+	column matematicas
+		dataType: int64
+		formatString: 0
+		lineageTag: 345f264b-2517-29ad-bdf9-01fd5ac9fe44
+		summarizeBy: none
+		sourceColumn: matematicas
+
+		annotation SummarizationSetBy = User
+
+	column lectura
+		dataType: int64
+		formatString: 0
+		lineageTag: c127273b-8c6e-f015-9d74-11e1a9708868
+		summarizeBy: none
+		sourceColumn: lectura
+
+		annotation SummarizationSetBy = User
+
+	column global
+		dataType: int64
+		formatString: 0
+		lineageTag: 2b72c430-7e1c-acbe-3c90-c72d1b7c418e
+		summarizeBy: none
+		sourceColumn: global
+
+		annotation SummarizationSetBy = User
+
+	column periodo
+		dataType: int64
+		formatString: 0
+		lineageTag: 2b9450c5-f06b-b6c9-6599-aeaab2d25188
+		summarizeBy: none
+		sourceColumn: periodo
+
+		annotation SummarizationSetBy = User
+
+	/// Rango de 25 puntos del puntaje global, para ver la distribucion por zona.
+	column rango_global = INT(datos[global] / 25) * 25
+		dataType: int64
+		formatString: 0
+		lineageTag: 2b4e79e9-2f6c-99bd-3d20-fa9a8cbd323f
+		summarizeBy: none
+
+		annotation SummarizationSetBy = User
+
+	partition datos = m
+		mode: import
+		source =
+				let
+				    Origen = Csv.Document(File.Contents(RutaDatos), [Delimiter = ",", Columns = 12, Encoding = 65001, QuoteStyle = QuoteStyle.None]),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars = true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos", {{"genero", type text}, {"zona", type text}, {"depto", type text}, {"municipio", type text}, {"estrato", type text}, {"educacion_madre", type text}, {"educacion_padre", type text}, {"internet", type text}, {"matematicas", Int64.Type}, {"lectura", Int64.Type}, {"global", Int64.Type}, {"periodo", Int64.Type}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_ResultType = Table

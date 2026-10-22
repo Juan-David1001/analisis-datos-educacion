@@ -1,3 +1,7 @@
 __pycache__/
 .ipynb_checkpoints/
 *.pyc
+
+# Power BI Project (PBIP): archivos locales de cada equipo
+**/.pbi/localSettings.json
+**/.pbi/cache.abf

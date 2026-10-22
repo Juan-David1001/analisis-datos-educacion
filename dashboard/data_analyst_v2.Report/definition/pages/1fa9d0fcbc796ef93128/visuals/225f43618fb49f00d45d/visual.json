@@ -1,0 +1,285 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "225f43618fb49f00d45d",
+  "position": {
+    "x": 728,
+    "y": 228,
+    "z": 7000,
+    "height": 444,
+    "width": 536,
+    "tabOrder": 7000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Limitaciones",
+                    "textStyle": {
+                      "fontSize": "13pt",
+                      "color": "#1F2937",
+                      "fontFamily": "Segoe UI Semibold",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#1F2937",
+                      "fontFamily": "Segoe UI"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Datos observacionales: ",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#1F2937",
+                      "fontFamily": "Segoe UI",
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": "muestran asociaciones, no causas.",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#1F2937",
+                      "fontFamily": "Segoe UI"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Muestra de 3.000 de un periodo, ",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#1F2937",
+                      "fontFamily": "Segoe UI",
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": "algo por debajo del país (−3,2 puntos en el global y −5,3 pp en internet). La brecha sí coincide: la nacional (26,2) cae dentro del IC 95 % de la muestra (24,6 – 32,8).",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#1F2937",
+                      "fontFamily": "Segoe UI"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Departamentos pequeños: ",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#1F2937",
+                      "fontFamily": "Segoe UI",
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": "no son comparables; se excluyen los de menos de 30 estudiantes.",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#1F2937",
+                      "fontFamily": "Segoe UI"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "No respuesta ",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#1F2937",
+                      "fontFamily": "Segoe UI",
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": "en internet y estrato puede sesgar H2, H3 y H4.",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#1F2937",
+                      "fontFamily": "Segoe UI"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Cuatro pruebas: ",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#1F2937",
+                      "fontFamily": "Segoe UI",
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": "con la corrección de Bonferroni (α = 0,0125) todas siguen siendo significativas.",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#1F2937",
+                      "fontFamily": "Segoe UI"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#E5E7EB'"
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

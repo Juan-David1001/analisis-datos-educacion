@@ -1,0 +1,321 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "36d87368b1f1346717c3",
+  "position": {
+    "x": 840,
+    "y": 268,
+    "z": 24000,
+    "height": 436,
+    "width": 424,
+    "tabOrder": 24000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Hallazgos clave",
+                    "textStyle": {
+                      "fontSize": "13pt",
+                      "color": "#1F2937",
+                      "fontFamily": "Segoe UI Semibold",
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Muestra completa, sin filtros",
+                    "textStyle": {
+                      "fontSize": "9pt",
+                      "color": "#4B5563",
+                      "fontFamily": "Segoe UI"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#1F2937",
+                      "fontFamily": "Segoe UI"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "La brecha es real y relevante. ",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#1F2937",
+                      "fontFamily": "Segoe UI",
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": "28,7 puntos a favor de lo urbano (d = 0,55, efecto mediano). La nacional es 26,2.",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#1F2937",
+                      "fontFamily": "Segoe UI"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "El internet tiene el mayor efecto: ",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#1F2937",
+                      "fontFamily": "Segoe UI",
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": "+36 puntos (d = 0,70)…",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#1F2937",
+                      "fontFamily": "Segoe UI"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "…pero no cierra la brecha. ",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#1F2937",
+                      "fontFamily": "Segoe UI",
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": "Entre quienes tienen internet sigue en 28,6 puntos.",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#1F2937",
+                      "fontFamily": "Segoe UI"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "No es solo el estrato. ",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#1F2937",
+                      "fontFamily": "Segoe UI",
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": "Dentro del mismo estrato la brecha crece: 15,8 en estrato 1 y 48,1 en estrato 3.",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#1F2937",
+                      "fontFamily": "Segoe UI"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Muestra algo por debajo del país: ",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#1F2937",
+                      "fontFamily": "Segoe UI",
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": "−3,2 puntos en el global y −5,3 pp en internet.",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#1F2937",
+                      "fontFamily": "Segoe UI"
+                    }
+                  }
+                ],
+                "listType": "bullet"
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "",
+                    "textStyle": {
+                      "fontSize": "11pt",
+                      "color": "#1F2937",
+                      "fontFamily": "Segoe UI"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Fuente: ICFES Saber 11, datos.gov.co (kgxf-xxbe). Referencia nacional: 1.065.888 estudiantes del periodo 20224, consultada el 22/10/2026.",
+                    "textStyle": {
+                      "fontSize": "8.5pt",
+                      "color": "#4B5563",
+                      "fontFamily": "Segoe UI"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#E5E7EB'"
+                    }
+                  }
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            },
+            "bottom": {
+              "expr": {
+                "Literal": {
+                  "Value": "8D"
+                }
+              }
+            },
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
