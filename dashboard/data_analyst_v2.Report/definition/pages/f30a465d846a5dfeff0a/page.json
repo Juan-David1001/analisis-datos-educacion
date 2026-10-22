@@ -1,8 +1,0 @@
-{
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
-  "name": "f30a465d846a5dfeff0a",
-  "displayName": "2 · H1 Brecha por zona",
-  "displayOption": "FitToPage",
-  "height": 720,
-  "width": 1280
-}

@@ -1,5 +1,0 @@
-/// Ruta del CSV limpio. Cambiela en Transformar datos > Administrar parametros si clona el repositorio en otra carpeta.
-expression RutaDatos = "C:\Users\david\Desktop\Projects\_developer_\data_analyst_03\data\datos_limpios.csv" meta [IsParameterQuery = true, Type = "Text", IsParameterQueryRequired = true]
-	lineageTag: 93563ee7-1aac-86bf-c6c5-3c1b44ee45ff
-
-	annotation PBI_ResultType = Text
