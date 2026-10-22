@@ -23,8 +23,9 @@ algo tan basico como tener internet en la casa. Si un estudiante no tiene
 internet, probablemente tampoco tiene computador ni un lugar bueno para
 estudiar, y eso se tiene que notar en el puntaje.
 
-## Las 3 preguntas
+## Las preguntas
 
 1. Hay diferencia en el puntaje global entre los estudiantes de zona rural y zona urbana?
 2. Tener internet en la casa tiene relacion con la zona donde estudia el estudiante?
-3. Cuales son los indicadores mas importantes para medir el rendimiento en esta muestra?
+3. Los estudiantes con internet en la casa sacan mejor puntaje, y eso ayuda a explicar la brecha entre zonas?
+4. La brecha rural-urbana se mantiene al comparar estudiantes del mismo estrato, o es solo un efecto socioeconomico?
