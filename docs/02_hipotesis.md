@@ -128,10 +128,12 @@ acompanamiento pedagogico, no sola.
 - Son datos de observacion, no un experimento. Las pruebas muestran
   asociaciones, no causas: no podemos decir que poner internet suba el
   puntaje 36 puntos.
-- Es una muestra de 3000 de un periodo. Los promedios de la muestra quedan
-  cerca de los nacionales del mismo periodo (ver docs/04_kpis.md), pero hay
-  departamentos con muy pocos estudiantes y no sirven para comparar
-  departamentos entre si.
+- Es una muestra de 3000 de un periodo. La brecha de la muestra se parece a
+  la nacional (26.2 puntos, dentro del intervalo de confianza), pero los
+  promedios y el internet quedan un poco por debajo del pais (ver
+  docs/04_kpis.md). Ademas hay departamentos con muy pocos estudiantes
+  (Vichada y Guaviare tienen 1) que no sirven para comparar departamentos
+  entre si.
 - El 14.7% no respondio lo del internet y el 15.5% lo del estrato. Si los que
   no respondieron son distintos a los que si (por ejemplo, mas rurales), los
   resultados de H2, H3 y H4 pueden tener sesgo.
