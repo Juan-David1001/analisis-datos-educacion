@@ -56,7 +56,29 @@ Hallazgos principales:
 
 ## Conclusiones
 
-Se completan con los hallazgos del dashboard en la fase 6.
+Con un nivel de significancia de 0.05, las cuatro hipótesis se rechazaron
+(p < 0.001) y se confirmó además el tamaño del efecto:
+
+1. **La brecha rural-urbana es real y general.** Los estudiantes rurales
+   sacan 28.7 puntos menos en el puntaje global (d = 0.55, efecto mediano).
+   No es un problema de una sola materia: la brecha es parecida en
+   matemáticas (6.0 puntos) y en lectura crítica (6.3).
+2. **La brecha no se explica solo por el estrato.** Dentro del mismo estrato
+   se mantiene e incluso crece: 15.8 puntos en estrato 1, 32.2 en el 2 y
+   48.1 en el 3.
+3. **El internet es el factor con mayor efecto individual (36 puntos,
+   d = 0.70), pero no cierra la brecha por sí solo**: entre estudiantes con
+   internet la brecha rural-urbana sigue en 28.6 puntos.
+
+De ahí salen tres decisiones con evidencia: (1) priorizar la conectividad
+rural, porque 57.4 % de los rurales no tiene internet frente a 24.9 % de los
+urbanos; (2) acompañar la conectividad con intervención pedagógica, ya que
+llevar internet por sí solo no iguala el puntaje; y (3) fijar como meta bajar
+la brecha de 28.7 a menos de 20 puntos y darle seguimiento desagregada por
+estrato y por área, no solo al promedio general.
+
+La limitación principal es que son datos de observación: las pruebas muestran
+asociación, no causalidad.
 
 ## Equipo
 
