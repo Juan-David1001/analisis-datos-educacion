@@ -18,6 +18,10 @@ y resultados en su README interno.
   comparativo y conclusiones.
   Detalle: ver `momento evaluativo 4/README.md`.
 
+## Estado
+
+- Momento evaluativo 3: entregado, pendiente por calificacion.
+
 ## Equipo
 
 - Juan David Osorio Zapata
