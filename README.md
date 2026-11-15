@@ -1,95 +1,29 @@
-# Análisis de datos educativos - Equipo 9
+# Análisis de Datos — Equipo 9 (ITM, 2026-2)
 
-Proyecto de Business Intelligence sobre datos de educación.
-ITM, Análisis de Datos, 2026-2.
+Repositorio único de entrega del equipo, organizado por momentos evaluativos
+según la guía del curso.
 
-## Fuente de datos
+Se realizó una reestructuración para mantener en un mismo repositorio,
+de forma organizada, los entregables de cada momento. Cada carpeta de
+momento es autocontenida y documenta su propio alcance, datos, ejecución
+y resultados en su README interno.
 
-Resultados unicos Saber 11, periodo 20224, portal datos.gov.co
-(datos abiertos del ICFES): https://www.datos.gov.co/d/kgxf-xxbe
-Muestra de trabajo: 3000 registros en
-`data/datos_reales.csv`, con puntajes de matematicas, lectura critica
-y global por estudiante, mas zona, genero y estrato.
+## Estructura
 
-## Objetivo
+- `momento evaluativo 3/` — Business Intelligence sobre resultados Saber 11 (ICFES).
+  Limpieza, pruebas de hipótesis, KPIs, dashboard en Power BI y guion de video.
+  Detalle: ver `momento evaluativo 3/README.md`.
+- `momento evaluativo 4/` — Predicción de fallas APS en camiones Scania (UCI).
+  EDA y preprocesamiento, componente supervisado, no supervisado,
+  comparativo y conclusiones.
+  Detalle: ver `momento evaluativo 4/README.md`.
 
-Analizar los datos educativos para encontrar que factores se relacionan
-con el rendimiento, y proponer decisiones con evidencia.
+## Estado
 
-## Metodología
-
-1. Limpieza de los datos (`notebooks/01_limpieza.ipynb`)
-2. Pruebas de hipotesis con valor p (`notebooks/02_hipotesis.ipynb`)
-3. Calculo de KPIs (`notebooks/03_kpis.ipynb`)
-4. Dashboard en Power BI (`dashboard/`)
-5. Video explicativo (`video/guion.md`)
-
-## Resultados
-
-Nivel de significancia 0.05. Ademas del valor p se reporta el tamanio del
-efecto. Detalle en `docs/02_hipotesis.md` y `docs/04_kpis.md`.
-
-| Hipotesis | Prueba | Valor p | Tamanio del efecto |
-|---|---|---|---|
-| H1: el puntaje global cambia con la zona | t de Welch | < 0.001 | d = 0.55 (mediano) |
-| H2: el internet se relaciona con la zona | Chi cuadrado | < 0.001 | V = 0.29 (moderado) |
-| H3: el puntaje global cambia con el internet | t de Welch | < 0.001 | d = 0.70 (mediano) |
-| H4: el puntaje global cambia con el estrato | Kruskal-Wallis | < 0.001 | epsilon cuadrado = 0.06 |
-
-| KPI | Muestra (IC 95%) | Nacional 20224 |
-|---|---|---|
-| Puntaje global promedio | 246.9 (244.9 a 248.8) | 250.1 |
-| Promedio matematicas | 49.7 (49.2 a 50.1) | 50.6 |
-| Promedio lectura critica | 52.2 (51.8 a 52.6) | 52.8 |
-| Brecha rural-urbana | 28.7 puntos (24.6 a 32.8) | 26.2 |
-| % de estudiantes con internet en el hogar | 67.3% (65.5% a 69.1%) | 72.6% |
-
-Hallazgos principales:
-
-- La brecha rural-urbana no se explica solo por el estrato: dentro del mismo
-  estrato se mantiene y crece (15.8 puntos en estrato 1, 48.1 en estrato 3).
-- Tener internet es el factor con el efecto mas grande (36 puntos), pero no
-  cierra la brecha por si solo: entre estudiantes con internet sigue en 28.6
-  puntos.
-- La brecha es parecida en matematicas y en lectura, asi que es un problema
-  general del aprendizaje rural y no de una sola materia.
-
-## Conclusiones
-
-Con un nivel de significancia de 0.05, las cuatro hipótesis se rechazaron
-(p < 0.001) y se confirmó además el tamaño del efecto:
-
-1. **La brecha rural-urbana es real y general.** Los estudiantes rurales
-   sacan 28.7 puntos menos en el puntaje global (d = 0.55, efecto mediano).
-   No es un problema de una sola materia: la brecha es parecida en
-   matemáticas (6.0 puntos) y en lectura crítica (6.3).
-2. **La brecha no se explica solo por el estrato.** Dentro del mismo estrato
-   se mantiene e incluso crece: 15.8 puntos en estrato 1, 32.2 en el 2 y
-   48.1 en el 3.
-3. **El internet es el factor con mayor efecto individual (36 puntos,
-   d = 0.70), pero no cierra la brecha por sí solo**: entre estudiantes con
-   internet la brecha rural-urbana sigue en 28.6 puntos.
-
-De ahí salen tres decisiones con evidencia: (1) priorizar la conectividad
-rural, porque 57.4 % de los rurales no tiene internet frente a 24.9 % de los
-urbanos; (2) acompañar la conectividad con intervención pedagógica, ya que
-llevar internet por sí solo no iguala el puntaje; y (3) fijar como meta bajar
-la brecha de 28.7 a menos de 20 puntos y darle seguimiento desagregada por
-estrato y por área, no solo al promedio general.
-
-La limitación principal es que son datos de observación: las pruebas muestran
-asociación, no causalidad.
+- Momento evaluativo 3: entregado, pendiente por calificacion.
 
 ## Equipo
 
 - Juan David Osorio Zapata
 - David Galvan Sierra
 - Federico Rodriguez Franco
-
-## Como correrlo
-
-```
-pip install -r requirements.txt
-```
-
-Abrir los notebooks en orden: 01, 02, 03.
